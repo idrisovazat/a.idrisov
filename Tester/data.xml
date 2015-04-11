@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<questions>
+    <question id="11111">
+        <body>
+Имеется следующий код:
+public class Overload{
+    public void method(Object o) {
+        System.out.println("Object");
+    }
+public void method(java.io.FileNotFoundException f) {
+    System.out.println("FileNotFoundException");
+}
+public void method(java.io.IOException i) {
+    System.out.println("IOException");
+}
+public static void main(String args[]) {
+    Overload test = new Overload();
+    test.method(null);}
+}
+
+Результатом его компиляции и выполнения будет:
+        </body>
+        <answer>Ошибка компиляции</answer>
+        <answer>Ошибка времени выполнения</answer>
+        <answer>«Object»</answer>
+        <answer>«FileNotFoundException»</answer>
+        <correctAnswer>3</correctAnswer>
+    </question>
+    <question id="22222">
+        <body>
+Float f1 = new Float(Float.NaN);
+Float f2 = new Float(Float.NaN);
+System.out.println( ""+ (f1 == f2)+" "+f1.equals(f2)+ " "+(Float.NaN == Float.NaN) );
+
+Что будет выведено в результате выполнения данного куска кода:
+        </body>
+        <answer>false false false</answer>
+        <answer>false true false</answer>
+        <answer>true true false</answer>
+        <answer>true true false</answer>
+        <answer>true true true</answer>
+        <correctAnswer>1</correctAnswer>
+    </question><question id="33333">
+    <body>
+class Mountain {
+    static String name = "Himalaya";
+    static Mountain getMountain() {
+        System.out.println("Getting Name ");
+        return null;
+    }
+    public static void main(String[ ] args) {
+        System.out.println( getMountain().name );
+    }
+}
+
+Что произойдет при попытке выполнения данного кода:
+    </body>
+    <answer>Будет выведено «Himalaya» но НЕ будет выведено «Getting Name»</answer>
+    <answer>Будет выведено «Getting Name » и «Himalaya»</answer>
+    <answer>Будет выброшен NullPointerException</answer>
+    <answer>Будет выведено «Getting Name », а потом выброшено NullPointerException</answer>
+    <correctAnswer>1</correctAnswer>
+</question>
+    <question id="44444">
+        <body>
+Float f1 = new Float(Float.NaN);
+Float f2 = new Float(Float.NaN);
+System.out.println( ""+ (f1 == f2)+" "+f1.equals(f2)+ " "+(Float.NaN == Float.NaN) );
+
+Что будет выведено в результате выполнения данного куска кода:
+        </body>
+        <answer>true false</answer>
+        <answer>true true</answer>
+        <answer>false false</answer>
+        <correctAnswer>0</correctAnswer>
+    </question>
+    <question id="55555">
+        <body>
+public class Main {
+    static void method(int... a) {
+        System.out.println("inside int...");
+    }
+    static void method(long a, long b) {
+         System.out.println("inside long");
+    }
+    static void method(Integer a, Integer b) {
+        System.out.println("inside INTEGER");
+    }
+    public static void main(String[] args) {
+        int a = 2;
+        int b = 3;
+        method(a,b);
+    }
+}
+
+В результате мы получим:
+        </body>
+        <answer>Ошибку компиляции</answer>
+        <answer>Ошибку времени выполнения</answer>
+        <answer>«inside int...»</answer>
+        <answer>«inside long»</answer>
+        <correctAnswer>3</correctAnswer>
+    </question>
+    <question id="66666">
+        <body>
+class Super { static String ID = "QBANK"; }
+class Sub extends Super{
+    static { System.out.print("In Sub"); }
+}
+class Test{
+    public static void main(String[] args) {
+        System.out.println(Sub.ID);
+    }
+}
+
+В результате выполнения данного кода:
+        </body>
+        <answer>Он даже не скомпилируется</answer>
+        <answer>Результат зависит от реализации JVM</answer>
+        <answer>Будет выведено «QBANK»</answer>
+        <answer>Все ответы неверны</answer>
+        <correctAnswer>2</correctAnswer>
+    </question>
+</questions>
